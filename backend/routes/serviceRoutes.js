@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { protect } from '../middleware/authMiddleware.js';
+import * as c from '../controllers/serviceController.js';
+const r = Router();
+r.get('/', c.listServices);
+r.get('/:slug', c.getService);
+r.post('/', protect, c.createService);
+r.put('/:id', protect, c.updateService);
+r.delete('/:id', protect, c.deleteService);
+export default r;

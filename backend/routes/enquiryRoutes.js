@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { protect } from '../middleware/authMiddleware.js';
+import * as c from '../controllers/enquiryController.js';
+const r = Router();
+r.post('/', c.createEnquiry);
+r.get('/', protect, c.listEnquiries);
+r.get('/:id', protect, c.getEnquiry);
+r.patch('/:id', protect, c.updateEnquiry);
+r.delete('/:id', protect, c.deleteEnquiry);
+export default r;

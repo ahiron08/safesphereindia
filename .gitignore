@@ -1,0 +1,72 @@
+# ============================================================================
+# Safe Sphere India - .gitignore
+# ============================================================================
+
+# --- Operating System Files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# --- Node.js / npm ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# --- Environment Files ---
+.env
+.env.local
+.env.*.local
+
+# --- Backend (Express) ---
+backend/node_modules/
+backend/package-lock.json
+backend/.env
+backend/.env.local
+backend/dist/
+backend/build/
+backend/logs/
+backend/*.log
+
+# --- Frontend (Vite + React) ---
+frontend/node_modules/
+frontend/package-lock.json
+frontend/.env
+frontend/.env.local
+frontend/dist/
+frontend/.vite/
+frontend/build/
+
+# --- Build Outputs (root level) ---
+dist/
+build/
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# --- Misc ---
+.coverage/
+.nyc_output/
+coverage/
+.turbo/
+
+# --- Logs ---
+*.log
+logs/
+
+# ============================================================================
+# End of .gitignore
+# ============================================================================

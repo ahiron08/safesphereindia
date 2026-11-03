@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import { protect } from '../middleware/authMiddleware.js';
+import * as c from '../controllers/bookingController.js';
+const r = Router();
+r.post('/', c.createBooking);
+r.get('/counts', c.getBookingCounts);
+r.get('/availability', c.getAvailability);
+r.get('/', protect, c.listBookings);
+r.get('/:id', protect, c.getBooking);
+r.patch('/:id/status', protect, c.updateBookingStatus);
+r.patch('/:id', protect, c.updateBooking);
+r.delete('/:id', protect, c.deleteBooking);
+export default r;

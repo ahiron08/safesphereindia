@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { protect } from '../middleware/authMiddleware.js';
+import * as c from '../controllers/articleController.js';
+const r = Router();
+r.get('/', c.listArticles);
+r.get('/:slug', c.getArticle);
+r.post('/', protect, c.createArticle);
+r.put('/:id', protect, c.updateArticle);
+r.delete('/:id', protect, c.deleteArticle);
+export default r;
